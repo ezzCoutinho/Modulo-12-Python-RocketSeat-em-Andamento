@@ -1,4 +1,7 @@
+import json
+
 import pika
+
 from src.configs.credentials import get_credentials
 
 credentials = get_credentials()
@@ -40,7 +43,9 @@ class RabbitMQConsumer:
         self.__channel.start_consuming()
 
     def rabbitmq_callback(self, ch, method, properties, body):
-        print(f"Mensagem recebida: {body}")
+        msg = body.decode("utf-8")
+        msg_dict = json.loads(msg)
+        print(msg_dict["message"])
 
 
 rabbitmq_consumer = RabbitMQConsumer()
