@@ -1,11 +1,8 @@
 import json
 
 import pika
-from dotenv import load_dotenv
 
 from src.configs.credentials import get_credentials
-
-load_dotenv()
 
 credentials = get_credentials()
 
