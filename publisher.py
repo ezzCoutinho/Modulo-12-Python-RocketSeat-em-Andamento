@@ -31,8 +31,18 @@ class RabbitMQPublisher:
         )
         connection = pika.BlockingConnection(connection_parameters)
         channel = connection.channel()
-        print(f"Channel created: {channel}")
         return channel
+
+    def send_message(self, body: dict):
+        self.__channel.basic_publish(
+            exchange=self.__exchange,
+            routing_key=self.__routing_key,
+            body=json.dumps(body),
+            properties=pika.BasicProperties(
+                delivery_mode=2,
+            ),
+        )
 
 
 rabbitmq_publisher = RabbitMQPublisher()
+rabbitmq_publisher.send_message(body={"message": "teste"})
