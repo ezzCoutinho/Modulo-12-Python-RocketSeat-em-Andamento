@@ -10,6 +10,7 @@ credentials = {
     "password": os.getenv("PASSWORD_RABBITMQ"),
     "exchange": os.getenv("EXCHANGE_RABBITMQ"),
     "routing_key": os.getenv("ROUTING_KEY_RABBITMQ"),
+    "queue": os.getenv("QUEUE_RABBITMQ"),
 }
 
 
