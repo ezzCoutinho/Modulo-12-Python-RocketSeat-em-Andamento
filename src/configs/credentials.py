@@ -1,5 +1,6 @@
-from dotenv import load_dotenv
 import os
+
+from dotenv import load_dotenv
 
 load_dotenv()
 
@@ -11,6 +12,8 @@ credentials = {
     "exchange": os.getenv("EXCHANGE_RABBITMQ"),
     "routing_key": os.getenv("ROUTING_KEY_RABBITMQ"),
     "queue": os.getenv("QUEUE_RABBITMQ"),
+    "token": os.getenv("TOKEN_TELEGRAM"),
+    "chat_id": os.getenv("CHAT_ID_TELEGRAM"),
 }
 
 
