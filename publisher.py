@@ -42,4 +42,8 @@ class RabbitMQPublisher:
 
 
 rabbitmq_publisher = RabbitMQPublisher()
-rabbitmq_publisher.send_message(body={"message": "teste"})
+rabbitmq_publisher.send_message(
+    body={
+        "message": "Lee, oh Lee, o que foi que eu fiz? Olha só para você, nem está consciente e continua se empenhando em mostrar para o mundo o que pode fazer."
+    }
+)

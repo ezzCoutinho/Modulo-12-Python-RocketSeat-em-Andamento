@@ -6,11 +6,10 @@ credentials = get_credentials()
 
 
 def send_telegram_message(message: str):
-    response = requests.post(
+    requests.post(
         f"https://api.telegram.org/bot{credentials['token']}/sendMessage",
         json={"chat_id": credentials["chat_id"], "text": message},
     )
-    print(response.json())
 
 
 send_telegram_message(
